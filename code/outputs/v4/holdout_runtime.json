@@ -1,0 +1,5 @@
+{
+  "seconds": 7.720404625026276,
+  "source_sha256": "4b78ee992db77c08d9664d05170568b5e68519a7fc1d70303ca0ab9c95da9125",
+  "seed_rules": "Explicit constants in the source; no observed test outcomes select designs."
+}

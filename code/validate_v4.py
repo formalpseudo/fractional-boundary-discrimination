@@ -1,0 +1,15 @@
+from power_study_v4 import *
+checks=[]
+def ck(name,ok,**evidence):checks.append(dict(check=name,passed=bool(ok),evidence=evidence))
+ds=json.loads((V4/'frozen_designs.json').read_text());h=pd.read_csv(V4/'holdout.csv');a=pd.read_csv(V4/'rank_ablation.csv');c=pd.read_csv(V4/'calibration.csv');pr=pd.read_csv(V4/'paired_residual.csv');ref=pd.read_csv(V4/'reference_refinement.csv')
+ck('complete_factorial_holdout',len(h)==4*3*4*4*524,rows=len(h));ck('finite_probability_values',np.isfinite(h.power).all() and h.power.between(0,1).all(),minimum=float(h.power.min()),maximum=float(h.power.max()));ck('retention_contraction',h.retained.between(-1e-10,1+1e-10).all(),min=float(h.retained.min()),max=float(h.retained.max()));ck('reference_refinement',ref.max_abs.max()<1e-6,maximum=float(ref.max_abs.max()),checked=16);ck('all_varpro_fit_statuses',pr.success.all(),fits=len(pr),bound_hits=int((pr.alpha_hat>1.94999).sum()))
+for key,dd in ds.items():
+ sel=dd['indices'];x=X[sel];T,v,s,k,score=learn(x,TRAIN[:,sel]);A=basis(x,3);nullerr=float(np.linalg.norm(T@A));orth=float(np.linalg.norm(T@T.T-np.eye(len(x)-3)));errv=float(np.linalg.norm(v[:k]@v[:k].T-np.eye(k)));ck('projection_'+key,nullerr<1e-12 and orth<1e-12 and errv<1e-12,null_error=nullerr,white_orthogonality=orth,compressed_orthogonality=errv,rank=k)
+ck('nine_sensor_designs_coincide',ds['9:energy']['indices']==ds['9:power']['indices'],positions=ds['9:power']['positions'])
+for name in ['uniform','power']:
+ for method in ['omnibus','compressed']:
+  empirical=float(c.query('design==@name and method==@method and truth=="restricted"').rate.iloc[0]);theory=float(h.query('m==9 and noise==.01 and design==@name and method==@method and domain=="legacy" and alpha==1.85 and kappa==.45 and c2==.22').power.iloc[0]);tol=5*np.sqrt(theory*(1-theory)/5000)+.001;ck('noncentral_power_matches_montecarlo_'+name+'_'+method,abs(empirical-theory)<tol,theory=theory,empirical=empirical,tolerance=tol)
+nulls=c.query('truth=="spectral"');ck('null_calibration',np.max(abs(nulls.rate-.05))<5*np.sqrt(.05*.95/5000),rates=nulls.rate.tolist());train_pars=set(itertools.product([1.15,1.45,1.75],[.35,.65],[-.35,.35],[0,.3]));test_pars=set(map(tuple,pd.read_csv(V4/'test_scenarios.csv')[['alpha','kappa','c2','c3']].to_numpy()));overlap=train_pars&test_pars;ck('no_holdout_training_parameter_overlap',not overlap,training_scenarios=len(train_pars),test_scenarios=len(test_pars),overlap=len(overlap))
+for part in ['design','holdout','calibration','robustness','twod4']:
+ runtime=json.loads((V4/(part+'_runtime.json')).read_text());actual=hashlib.sha256((ROOT/'code/power_study_v4.py').read_bytes()).hexdigest();ck('execution_source_'+part,runtime['source_sha256']==actual,seconds=runtime['seconds'])
+report={'passed':all(x['passed'] for x in checks),'checks':checks,'interpretation':'Conditional exact null assumes declared support, Gaussian independent readouts and time errors, known covariance shape. Rows sharing layout/noise are paired and are not independent repetitions.'};(ROOT/'reports/VALIDATION_V4.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))

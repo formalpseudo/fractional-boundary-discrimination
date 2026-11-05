@@ -1,0 +1,30 @@
+{
+  "selection": "Core numerical implementation and supporting synthetic records",
+  "original_source_files": [
+    {
+      "path": "code/run_experiments.py",
+      "source_sha256": "6904af63f65c38b078be72d94b502131530a583b92f0d9228e9a9ca6503aa909"
+    },
+    {
+      "path": "code/independent_galerkin.py",
+      "source_sha256": "8dd72c47b16bbbe10942e7763cb632041d357380e61c2036b0c5af10aec7979d"
+    },
+    {
+      "path": "code/extended_study_v3.py",
+      "source_sha256": "3d8ebd6d0815e89a8c9243f7dad43e80d2e55eb9fd3555e24d17702e452bfc2a"
+    },
+    {
+      "path": "code/power_study_v4.py",
+      "source_sha256": "4b78ee992db77c08d9664d05170568b5e68519a7fc1d70303ca0ab9c95da9125"
+    },
+    {
+      "path": "code/validate_v4.py",
+      "source_sha256": "b12c1e952c155568b2bef30480103a5b5ae4ab6d33d267d6b2243300bc72229b"
+    },
+    {
+      "path": "code/figures_v4.py",
+      "source_sha256": "5b0ffe2be789511707f71b95060d193552f3c3f9a6d7afe4dea0249d3fb9a55c"
+    }
+  ],
+  "code_modified_for_release": false
+}

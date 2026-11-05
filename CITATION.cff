@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this versioned software release when using the code or synthetic records."
+type: software
+title: "Fractional boundary discrimination: Core numerical code and synthetic benchmarks"
+authors:
+  - family-names: Huang
+    given-names: Yiheng
+  - family-names: Hou
+    given-names: Muzhou
+version: 1.0.0
+date-released: 2026-11-06
+license: MIT
+repository-code: "https://github.com/formalpseudo/fractional-boundary-discrimination"
+url: "https://github.com/formalpseudo/fractional-boundary-discrimination/releases/tag/v1.0.0"
+abstract: "Galerkin and finite-difference solvers, frozen discrepancy compression, replicated-observation diagnostics, sensor design, and synthetic benchmark records for fractional diffusion boundary-model discrimination."
+keywords:
+  - fractional diffusion
+  - sensor placement
+  - matched subspace detection
+  - reproducible research

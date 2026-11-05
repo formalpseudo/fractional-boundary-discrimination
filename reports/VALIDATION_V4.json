@@ -1,0 +1,276 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "complete_factorial_holdout",
+      "passed": true,
+      "evidence": {
+        "rows": 100608
+      }
+    },
+    {
+      "check": "finite_probability_values",
+      "passed": true,
+      "evidence": {
+        "minimum": 0.05042127661035646,
+        "maximum": 1.0
+      }
+    },
+    {
+      "check": "retention_contraction",
+      "passed": true,
+      "evidence": {
+        "min": 0.21764939191756816,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "reference_refinement",
+      "passed": true,
+      "evidence": {
+        "maximum": 7.9048341428134e-08,
+        "checked": 16
+      }
+    },
+    {
+      "check": "all_varpro_fit_statuses",
+      "passed": true,
+      "evidence": {
+        "fits": 1800,
+        "bound_hits": 43
+      }
+    },
+    {
+      "check": "projection_7:uniform",
+      "passed": true,
+      "evidence": {
+        "null_error": 4.619138130840055e-16,
+        "white_orthogonality": 3.3624114303072275e-16,
+        "compressed_orthogonality": 6.661338147750939e-16,
+        "rank": 1
+      }
+    },
+    {
+      "check": "projection_7:energy",
+      "passed": true,
+      "evidence": {
+        "null_error": 3.8427318153140143e-16,
+        "white_orthogonality": 3.701126395664694e-16,
+        "compressed_orthogonality": 2.220446049250313e-16,
+        "rank": 1
+      }
+    },
+    {
+      "check": "projection_7:power",
+      "passed": true,
+      "evidence": {
+        "null_error": 3.8427318153140143e-16,
+        "white_orthogonality": 3.701126395664694e-16,
+        "compressed_orthogonality": 2.220446049250313e-16,
+        "rank": 1
+      }
+    },
+    {
+      "check": "projection_9:uniform",
+      "passed": true,
+      "evidence": {
+        "null_error": 8.68767685869513e-16,
+        "white_orthogonality": 5.279779162190555e-16,
+        "compressed_orthogonality": 6.661338147750939e-16,
+        "rank": 1
+      }
+    },
+    {
+      "check": "projection_9:energy",
+      "passed": true,
+      "evidence": {
+        "null_error": 6.627751290055499e-16,
+        "white_orthogonality": 6.045405537032093e-16,
+        "compressed_orthogonality": 9.944793112816125e-16,
+        "rank": 2
+      }
+    },
+    {
+      "check": "projection_9:power",
+      "passed": true,
+      "evidence": {
+        "null_error": 6.627751290055499e-16,
+        "white_orthogonality": 6.045405537032093e-16,
+        "compressed_orthogonality": 9.944793112816125e-16,
+        "rank": 2
+      }
+    },
+    {
+      "check": "projection_13:uniform",
+      "passed": true,
+      "evidence": {
+        "null_error": 8.647197128301505e-16,
+        "white_orthogonality": 5.587954015749917e-16,
+        "compressed_orthogonality": 8.881784197001252e-16,
+        "rank": 1
+      }
+    },
+    {
+      "check": "projection_13:energy",
+      "passed": true,
+      "evidence": {
+        "null_error": 6.248219931231411e-16,
+        "white_orthogonality": 5.280947451945326e-16,
+        "compressed_orthogonality": 1.134928168126152e-15,
+        "rank": 2
+      }
+    },
+    {
+      "check": "projection_13:power",
+      "passed": true,
+      "evidence": {
+        "null_error": 6.248219931231411e-16,
+        "white_orthogonality": 5.280947451945326e-16,
+        "compressed_orthogonality": 1.134928168126152e-15,
+        "rank": 2
+      }
+    },
+    {
+      "check": "projection_17:uniform",
+      "passed": true,
+      "evidence": {
+        "null_error": 1.2379658447226931e-15,
+        "white_orthogonality": 6.01019242753992e-16,
+        "compressed_orthogonality": 1.121270291988505e-15,
+        "rank": 2
+      }
+    },
+    {
+      "check": "projection_17:energy",
+      "passed": true,
+      "evidence": {
+        "null_error": 1.5824014318030571e-15,
+        "white_orthogonality": 7.83499733287484e-16,
+        "compressed_orthogonality": 7.021666937153402e-16,
+        "rank": 2
+      }
+    },
+    {
+      "check": "projection_17:power",
+      "passed": true,
+      "evidence": {
+        "null_error": 1.5824014318030571e-15,
+        "white_orthogonality": 7.83499733287484e-16,
+        "compressed_orthogonality": 7.021666937153402e-16,
+        "rank": 2
+      }
+    },
+    {
+      "check": "nine_sensor_designs_coincide",
+      "passed": true,
+      "evidence": {
+        "positions": [
+          -0.95,
+          -0.9025,
+          -0.855,
+          -0.5225,
+          0.0,
+          0.5225,
+          0.855,
+          0.9025000000000001,
+          0.95
+        ]
+      }
+    },
+    {
+      "check": "noncentral_power_matches_montecarlo_uniform_omnibus",
+      "passed": true,
+      "evidence": {
+        "theory": 0.2937222574205151,
+        "empirical": 0.2976,
+        "tolerance": 0.033206326468281956
+      }
+    },
+    {
+      "check": "noncentral_power_matches_montecarlo_uniform_compressed",
+      "passed": true,
+      "evidence": {
+        "theory": 0.9118072710159292,
+        "empirical": 0.9144,
+        "tolerance": 0.021051779414607206
+      }
+    },
+    {
+      "check": "noncentral_power_matches_montecarlo_power_omnibus",
+      "passed": true,
+      "evidence": {
+        "theory": 0.6541421855030929,
+        "empirical": 0.6554,
+        "tolerance": 0.03463333068908952
+      }
+    },
+    {
+      "check": "noncentral_power_matches_montecarlo_power_compressed",
+      "passed": true,
+      "evidence": {
+        "theory": 0.995876777886624,
+        "empirical": 0.9966,
+        "tolerance": 0.005531126323983795
+      }
+    },
+    {
+      "check": "null_calibration",
+      "passed": true,
+      "evidence": {
+        "rates": [
+          0.046,
+          0.045,
+          0.049,
+          0.0486,
+          0.049,
+          0.0486
+        ]
+      }
+    },
+    {
+      "check": "no_holdout_training_parameter_overlap",
+      "passed": true,
+      "evidence": {
+        "training_scenarios": 24,
+        "test_scenarios": 524,
+        "overlap": 0
+      }
+    },
+    {
+      "check": "execution_source_design",
+      "passed": true,
+      "evidence": {
+        "seconds": 2.8127494999789633
+      }
+    },
+    {
+      "check": "execution_source_holdout",
+      "passed": true,
+      "evidence": {
+        "seconds": 7.720404625026276
+      }
+    },
+    {
+      "check": "execution_source_calibration",
+      "passed": true,
+      "evidence": {
+        "seconds": 3.346467916999245
+      }
+    },
+    {
+      "check": "execution_source_robustness",
+      "passed": true,
+      "evidence": {
+        "seconds": 0.12780691700754687
+      }
+    },
+    {
+      "check": "execution_source_twod4",
+      "passed": true,
+      "evidence": {
+        "seconds": 4.003810583992163
+      }
+    }
+  ],
+  "interpretation": "Conditional exact null assumes declared support, Gaussian independent readouts and time errors, known covariance shape. Rows sharing layout/noise are paired and are not independent repetitions."
+}

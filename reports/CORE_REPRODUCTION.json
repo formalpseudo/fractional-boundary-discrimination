@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "training_max_abs_difference": 0.0,
+  "power_max_abs_difference": 3.219646771412954e-15,
+  "selected_rank": 2,
+  "sensor_positions": [
+    -0.95,
+    -0.9025,
+    -0.855,
+    -0.5225,
+    0.0,
+    0.5225,
+    0.855,
+    0.9025000000000001,
+    0.95
+  ],
+  "summaries": {
+    "legacy": {
+      "omnibus": {
+        "mean": 0.9115454061824025,
+        "minimum": 0.6428703201685884,
+        "scenarios": 12
+      },
+      "compressed": {
+        "mean": 0.9989633673732118,
+        "minimum": 0.9930960177478582,
+        "scenarios": 12
+      },
+      "local-rank1": {
+        "mean": 0.9993430596548567,
+        "minimum": 0.9965333391393467,
+        "scenarios": 12
+      }
+    },
+    "stress": {
+      "omnibus": {
+        "mean": 0.5378680411993819,
+        "minimum": 0.05903403514413995,
+        "scenarios": 256
+      },
+      "compressed": {
+        "mean": 0.8011324574950965,
+        "minimum": 0.1074487982809143,
+        "scenarios": 256
+      },
+      "local-rank1": {
+        "mean": 0.8020621937280044,
+        "minimum": 0.1258006280563361,
+        "scenarios": 256
+      }
+    }
+  },
+  "seconds": 3.570168250007555
+}
